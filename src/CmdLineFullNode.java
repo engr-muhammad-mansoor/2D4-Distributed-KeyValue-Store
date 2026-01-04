@@ -12,16 +12,15 @@ public class CmdLineFullNode {
         if (args.length != 4) {
             System.err.println("Usage error!");
             System.err.println("DSTStoreCmdLine startingNodeName startingNodeAddress ipAddress portNumber");
-            return;
         } else {
-	    // A full node that is running on the network to be a first point of contact
+            // A full node that is running on the network to be a first point of contact
             String startingNodeName = args[0];
-	    String startingNodeAddress = args[1];
+            String startingNodeAddress = args[1];
 
-	    // These give the IP Address and port for other nodes to contact this one
-	    String ipAddress = args[2];
-	    int portNumber;
-	    try {
+            // These give the IP Address and port for other nodes to contact this one
+            String ipAddress = args[2];
+            int portNumber;
+            try {
                 portNumber = Integer.parseInt(args[3]);
             } catch (Exception e) {
                 System.err.println("Exception parsing the port number");
@@ -29,21 +28,20 @@ public class CmdLineFullNode {
                 return;
             }
 
-	    
+
             // Use a FullNode object to be a full participant in the 2D#4 network
             FullNode fn = new FullNode();
 
-	    // Full nodes need to be able to accept incoming connections
-	    if (fn.listen(ipAddress, portNumber)) {
+            // Full nodes need to be able to accept incoming connections
+            if (fn.listen(ipAddress, portNumber)) {
 
-		// Become part of the network
-		fn.handleIncomingConnections(startingNodeName, startingNodeAddress);
-		
-	    } else {
-		System.err.println("Could not listen for incoming connections");
-	    }
+                // Become part of the network
+                fn.handleIncomingConnections(startingNodeName, startingNodeAddress);
 
-            return;
+            } else {
+                System.err.println("Could not listen for incoming connections");
+            }
+
         }
     }
 }

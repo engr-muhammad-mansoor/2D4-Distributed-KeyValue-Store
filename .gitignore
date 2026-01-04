@@ -24,3 +24,10 @@ hs_err_pid*
 
 # Editor backups
 *~
+
+# IntelliJ IDEA
+.idea/
+*.iml
+
+# Build output
+out/

@@ -12,33 +12,31 @@ public class CmdLineStore {
         if (args.length != 4) {
             System.err.println("Usage error!");
             System.err.println("DSTStoreCmdLine startingNodeName startingNodeAddress key value");
-            return;
         } else {
-	    // A full node that is running on the network to be a first point of contact
+            // A full node that is running on the network to be a first point of contact
             String startingNodeName = args[0];
-	    String startingNodeAddress = args[1];
+            String startingNodeAddress = args[1];
 
-	    String key = args[2] + '\n';   // All keys have a new line at the end
-	    String value = args[3] + '\n'; // All values have a new line at the end
+            String key = args[2] + '\n';   // All keys have a new line at the end
+            String value = args[3] + '\n'; // All values have a new line at the end
 
             // Use a TemporaryNode to store the (key, value) pair on the network
             TemporaryNode tn = new TemporaryNode();
 
-	    // Make contact with the 2D#4 network
-	    if (tn.start(startingNodeName, startingNodeAddress)) {
+            // Make contact with the 2D#4 network
+            if (tn.start(startingNodeName, startingNodeAddress)) {
 
-		// Store the (key, value) pair
-		if (tn.store(key, value)) {
-		    System.out.println("Store worked! :-)");
-		} else {
-		    System.out.println("Store failed! :-(");
-		}
+                // Store the (key, value) pair
+                if (tn.store(key, value)) {
+                    System.out.println("Store worked! :-)");
+                } else {
+                    System.out.println("Store failed! :-(");
+                }
 
-	    } else {
-		System.err.println("Could not contact network?");
-	    }
+            } else {
+                System.err.println("Could not contact network?");
+            }
 
-            return;
         }
     }
 }
