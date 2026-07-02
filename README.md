@@ -69,8 +69,8 @@ The system follows a client-server architecture where:
 
 1. Clone the repository:
 ```bash
-git clone https://github.com/yourusername/2D#4.git
-cd 2D#4
+git clone https://github.com/engr-muhammad-mansoor/2D4-Distributed-KeyValue-Store.git
+cd 2D4-Distributed-KeyValue-Store
 ```
 
 2. Compile the Java source files:
@@ -197,7 +197,7 @@ The system uses a text-based protocol for communication:
 This project was developed as part of:
 - **Course**: IN2011 Computer Networks
 - **Academic Year**: 2023/2024
-- **Institution**: [Your Institution]
+- **Institution**: COMSATS University Islamabad
 
 ## 📝 Notes
 
